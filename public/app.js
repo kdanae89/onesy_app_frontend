@@ -4,8 +4,6 @@ app.controller('mainController', ['$http', function($http) {
 
   this.url = 'http://localhost:3000';
   this.user = {};
-  var controller = this;
-  controller.user= {};
   this.onsey = {};
 
 
@@ -17,11 +15,13 @@ app.controller('mainController', ['$http', function($http) {
       url: this.url + '/users/login',
       data: { user: { username: logUser.username, password: logUser.password }}
     }).then(function(response) {
+      console.log(response);
       this.user = response.data.user;
-      localStorage.setItem('token', JSON.stringify(response.data.token));
       console.log(this.user);
+      localStorage.setItem('token', JSON.stringify(response.data.token));
+      localStorage.setItem('username', JSON.stringify(response.data.user.username));
+      localStorage.setItem('userId', JSON.stringify(response.data.user.id));
       document.getElementById("logIn").reset();
-      this.showUser();
     }.bind(this));
   }
 
@@ -37,30 +37,31 @@ app.controller('mainController', ['$http', function($http) {
     }.bind(this));
   }
 
-  // Get request here!!!!!! Gets current user
-  this.showUser = function() {
-    console.log(this.user);
-    $http({
-      method: 'GET',
-      url: this.url + '/users/' + this.user.id,
-      headers: {'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('token'))}
-    }).then(function(response) {
-      console.log(response);
-      this.user = response.data.user;
-    }.bind(this));
-  }
+  // // Get request here!!!!!! Gets current user
+  // this.showUser = function() {
+  //   $http({
+  //     method: 'GET',
+  //     url: this.url + '/users/' + this.user.id,
+  //     headers: {'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('token'))}
+  //   }).then(function(response) {
+  //     console.log(response);
+  //     this.user = response.data.username;
+  //   }.bind(this));
+  // }
 
 
 
   // Put request to edit a user's info
   this.edit = function(editMe) {
+    console.log("checking user in edit", this.user.id);
     $http({
       method: 'PUT',
       url: this.url + '/users/' + this.user.id,
       data: { user: { username: editMe.username, password: editMe.password }},
       headers: { 'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('token'))}
     }).then(function(response) {
-      this.user = response.data.user;
+      console.log(response);
+      this.user = response.data.username;
       document.getElementById("editUser").reset();
     }.bind(this));
   }
