@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app="ProjectOnesie">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script type="text/javascript" src="/app.js"></script>
+    <title>Project Onesie</title>
+  </head>
+  <body ng-controller="mainController as ctrl">
+    <header>
+      <nav>
+        <ul>
+          <li>HOME</li>
+          <li>ABOUT</li>
+          <li>ONESIES</li>
+          <li>IMAGES</li>
+          <li>DESIGNS</li>
+        </ul>
+      </nav>
+    </header>
+    <form id="logIn" ng-submit="ctrl.login(logUser)">
+      <input type="text" ng-model="logUser.username" placeholder="username"/>
+      <input type="password" ng-model="logUser.password" placeholder="password"/>
+      <input type="submit" value="log in"/>
+    </form>
+  </br>
+  <form id="register" ng-submit="ctrl.register(newUser)">
+    <input type="text" ng-model="newUser.username" placeholder="username"/>
+    <input type="password" ng-model="newUser.password" placeholder="password">
+    <input type="submit" value="register"/>
+  </form>
+</br>
+<form id="editUser" ng-submit="ctrl.edit(editMe)">
+  <input type="text" ng-model="editMe.username" placeholder="new username"/>
+  <input type="password" ng-model="editMe.password" placeholder="new password"/>
+  <input type="submit" value="edit user"/>
+</form>
+    <main>
+      <h4>Welcome to</h4>
+      <h1>Project Onesie!</h1>
+      <p> {{ ctrl.user.username }} </p>
+    </main>
+    <section>
+      <h1>What the heck is Project Onesie though?!</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <h1>Instructions!</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <section>
+        <h1>Create a Onesie</h1>
+        <form ng-submit="ctrl.createOnesy(newOnesy)">
+        <label for="size">Size</label>
+          <select ng-model="newOnesy.size">
+            <option value="0-3">0-3 months</option>
+            <option value="3-6">3-6 months</option>
+            <option value="6-9">6-9 months</option>
+            <option value="9-12">9-12 months</option>
+          </select name="color">
+          <label for="color">Color</label>
+          <select ng-model="newOnesy.color">
+            <option value="white">White</option>
+            <option value="pastel pink">Pastel Pink</option>
+            <option value="baby blue">Baby Blue</option>
+            <option value="neutral yellow">Neutral Yellow</option>
+          </select>
+          <input type="submit" value="create onesie"/>
+        </form>
+        </section>
+      </body>
+    </html>
