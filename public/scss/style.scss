@@ -6,15 +6,19 @@ $pastelPink: #FFEAFA;
 $pastelYellow: #FEFFD1;
 $pastelPurple: #F7E2FF;
 $sectionHeading: 2em;
-$bannerHeading: 2em;
+$bannerHeading: 1em;
 
 //Mixins
 
 @mixin banner {
   width: 100%;
+  position: relative;
   z-index: 1;
+  bottom: 3em;
   .banner-content {
-    width: 100;
+    position: absolute;
+    width: 100%;
+    top: 1em;
   }
   img {
     width: 100%;
@@ -27,7 +31,8 @@ $bannerHeading: 2em;
   }
   span.title {
     font-weight: normal;
-    margin-bottom: 1em;
+    font-size: 4em;
+    margin-top: 1.5em;
   }
 }
 
@@ -35,6 +40,10 @@ body {
   font-family: 'Risque', cursive;
   text-align: center;
 }
+
+// header {
+//   position: relative;
+// }
 
 #main-nav {
   ul {
@@ -65,6 +74,11 @@ body {
   clear: both;
 }
 
+#main-nav ul li:hover {
+  background: $babyBlue;
+}
+
+
 .lead-banner {
   img {
     width: 100%;
@@ -79,12 +93,12 @@ section h1 {
 
 .lead-banner {
   @include banner;
-  text-align: center;
+  text-align: left;
 }
 
 .fun-banner {
   @include banner;
-  text-align: center;
+  text-align: right;
 }
 
 .main-section {
