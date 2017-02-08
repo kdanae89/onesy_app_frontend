@@ -34,6 +34,7 @@
           </div>
         </div>
       </div>
+    <hr/>
     </header>
     <form id="logIn" ng-submit="ctrl.login(logUser)">
       <input type="text" ng-model="logUser.username" placeholder="username"/>
@@ -53,11 +54,17 @@
   <input type="submit" value="edit user"/>
 </form>
     <main>
-      <h4>Welcome to</h4>
-      <h1>Project Onesie!</h1>
-      <p> {{ ctrl.user.username }} </p>
+      <div class="fun-banner">
+        <img src="https://img.clipartfest.com/2dc71be55a88f9bc1ef955e05edda4d2_baby-nautical-clipart-free-baby-clipart-images_6433-2920.png"/>
+        <div class="banner-content">
+          <div class="wrapper">
+            <span class="title">Make Your Onesie!</span>
+            <span class="sub-title">Let's get started!</span>
+          </div>
+        </div>
+      </div>
     </main>
-    <section>
+    <section class="main-section">
       <h1>What the heck is Project Onesie though?!</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       <h1>Instructions!</h1>
