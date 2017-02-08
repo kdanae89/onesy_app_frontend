@@ -5,8 +5,26 @@ app.controller('mainController', ['$http', function($http) {
   this.url = 'http://localhost:3000';
   this.user = {};
   this.onsey = {};
+  //Img info for appending white onesy on create
   var whiteOnesy = document.createElement('img');
   whiteOnesy.src = "http://www.clipartkid.com/images/363/baby-onesie-white-trans-free-images-at-clker-com-vector-clip-art-C1WPC8-clipart.png";
+  whiteOnesy.setAttribute("height", "400");
+  whiteOnesy.setAttribute("width", "400");
+  //Img info for appending pink onesy on create
+  var pinkOnesy = document.createElement('img');
+  pinkOnesy.src = "http://www.clipartkid.com/images/472/light-pink-bodysuit-short-sleeve-baby-n-toddler-8EkNsb-clipart.jpg";
+  pinkOnesy.setAttribute("height", "400");
+  pinkOnesy.setAttribute("height", "400");
+  //Img info for appending blue onesy
+  var blueOnesy = document.createElement('img');
+  blueOnesy.src = "https://www.towelsandhome.com/media/catalog/product/cache/1/image/040ec09b1e35df139433887a97daa66f/s/h/short_sleeve_creeper-baby_blue_1_1.jpg";
+  blueOnesy.setAttribute("height", "400");
+  blueOnesy.setAttribute("height", "400");
+  //Img info for yellow onesy
+  var yellowOnesy = document.createElement('img');
+  yellowOnesy.src = "http://www.sawyoo.com/postpic/2015/04/blank-baby-onesie-template_476014.jpg";
+  yellowOnesy.setAttribute("height", "400");
+  yellowOnesy.setAttribute("height", "400");
 
 
 
@@ -77,9 +95,16 @@ app.controller('mainController', ['$http', function($http) {
       data: { onesy: { size: newOnesy.size, color: newOnesy.color, user_id: this.user.id }}
     }).then(function(response) {
       console.log(response);
-      console.log(whiteOnesy);
       if (response.data.onesy.color == "white") {
         document.getElementById("onesyPreview").appendChild(whiteOnesy);
+      } else if (response.data.onesy.color == "pastel pink") {
+        document.getElementById("onesyPreview").appendChild(pinkOnesy);
+      } else if (response.data.onesy.color == "baby blue") {
+        document.getElementById("onesyPreview").appendChild(blueOnesy);
+      } else if (response.data.onesy.color == "neutral yellow") {
+        document.getElementById("onesyPreview").appendChild(yellowOnesy);
+      } else {
+        console.log("no onesy created");
       }
     }.bind(this));
   }
