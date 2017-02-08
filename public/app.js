@@ -5,6 +5,9 @@ app.controller('mainController', ['$http', function($http) {
   this.url = 'http://localhost:3000';
   this.user = {};
   this.onsey = {};
+  var whiteOnesy = document.createElement('img');
+  whiteOnesy.src = "http://www.clipartkid.com/images/363/baby-onesie-white-trans-free-images-at-clker-com-vector-clip-art-C1WPC8-clipart.png";
+
 
 
 
@@ -74,7 +77,10 @@ app.controller('mainController', ['$http', function($http) {
       data: { onesy: { size: newOnesy.size, color: newOnesy.color, user_id: this.user.id }}
     }).then(function(response) {
       console.log(response);
-      console.log(this.user.id);
+      console.log(whiteOnesy);
+      if (response.data.onesy.color == "white") {
+        document.getElementById("onesyPreview").appendChild(whiteOnesy);
+      }
     }.bind(this));
   }
 
