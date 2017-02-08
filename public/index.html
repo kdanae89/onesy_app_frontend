@@ -7,19 +7,33 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
     <script type="text/javascript" src="/js/app.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Risque" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
     <title>Project Onesie</title>
   </head>
   <body ng-controller="mainController as ctrl">
     <header>
-      <nav>
-        <ul>
-          <li>HOME</li>
-          <li>ABOUT</li>
-          <li>ONESIES</li>
-          <li>IMAGES</li>
-          <li>DESIGNS</li>
-        </ul>
+      <nav id="main-nav">
+        <div class="wrapper">
+          <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">ONESIES</a></li>
+            <li><a href="#">IMAGES</a></li>
+            <li><a href="#">DESIGNS</a></li>
+          </ul>
+        </div>
       </nav>
+      <div class="lead-banner">
+        <img src="http://www.clker.com/cliparts/u/j/p/T/o/i/baby-shower-banner-md.png"/>
+        <div class="banner-content">
+          <div class="wrapper">
+            <span class="title">Project Onesie</span>
+            <span class="sub-title">Customizable onesies for you munchkins</span>
+          </div>
+        </div>
+      </div>
     </header>
     <form id="logIn" ng-submit="ctrl.login(logUser)">
       <input type="text" ng-model="logUser.username" placeholder="username"/>
