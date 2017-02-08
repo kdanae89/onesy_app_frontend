@@ -71,9 +71,10 @@ app.controller('mainController', ['$http', function($http) {
     $http({
       method: 'POST',
       url: this.url + '/users/' + this.user.id + '/onesies',
-      data: { onesy: { size: newOnesy.size, color: newOnesy.color }}
+      data: { onesy: { size: newOnesy.size, color: newOnesy.color, user_id: newOnesy.user_id }}
     }).then(function(response) {
       console.log(response);
+      console.log(this.user.id);
     }.bind(this));
   }
 
