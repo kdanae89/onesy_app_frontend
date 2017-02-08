@@ -1,49 +1,11 @@
-// variables
-
-$pastelGreen: #C4EFC2;
-$babyBlue: #CEF1FF;
-$pastelPink: #FFEAFA;
-$pastelYellow: #FEFFD1;
-$pastelPurple: #F7E2FF;
-$sectionHeading: 2em;
-$bannerHeading: 1em;
-
-//Mixins
-
-@mixin banner {
-  width: 100%;
-  position: relative;
-  z-index: 1;
-  bottom: 3em;
-  .banner-content {
-    position: absolute;
-    width: 100%;
-    top: 1em;
-  }
-  img {
-    width: 100%;
-  }
-  span {
-    font-size: $bannerHeading;
-    display: block;
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-  span.title {
-    font-weight: normal;
-    font-size: 4em;
-    margin-top: 1.5em;
-  }
-}
+@import "reset";
+@import "variables";
+@import "mixins";
 
 body {
   font-family: 'Risque', cursive;
   text-align: center;
 }
-
-// header {
-//   position: relative;
-// }
 
 #main-nav {
   ul {
@@ -53,12 +15,16 @@ body {
     opacity: 0.9;
     margin-top: 0;
     z-index: 2;
+    @include clearfix;
   }
   li {
     width: 9%;
-    padding: 1em;
+    padding: 1.2em;
     float: left;
     list-style: none;
+    &:hover {
+      background: $babyBlue;
+    }
   }
   a {
     color: black;
@@ -68,21 +34,11 @@ body {
   }
 }//end main-nav
 
-#main-nav ul:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-#main-nav ul li:hover {
-  background: $babyBlue;
-}
-
-
 .lead-banner {
   img {
     width: 100%;
     clear: both;
+    height: 30em;
   }
 }
 
@@ -94,11 +50,15 @@ section h1 {
 .lead-banner {
   @include banner;
   text-align: left;
+  .banner-content {
+    top: 15em;
+  }
 }
 
 .fun-banner {
   @include banner;
   text-align: right;
+  margin: 5em 0;
 }
 
 .main-section {
