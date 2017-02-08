@@ -5,21 +5,36 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
-    <script type="text/javascript" src="/app.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Risque" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
     <title>Project Onesie</title>
   </head>
   <body ng-controller="mainController as ctrl">
     <header>
-      <nav>
-        <ul>
-          <li>HOME</li>
-          <li>ABOUT</li>
-          <li>ONESIES</li>
-          <li>IMAGES</li>
-          <li>DESIGNS</li>
-        </ul>
+      <nav id="main-nav">
+        <div class="wrapper">
+          <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">ONESIES</a></li>
+            <li><a href="#">IMAGES</a></li>
+            <li><a href="#">DESIGNS</a></li>
+          </ul>
+        </div>
       </nav>
+      <div class="lead-banner">
+        <img src="https://img0.etsystatic.com/042/1/6772659/il_340x270.638139554_tau1.jpg"/>
+        <div class="banner-content">
+          <div class="wrapper">
+            <span class="title">Project Onesie</span>
+            <span class="sub-title">Customizable onesies for your munchkins</span>
+          </div>
+        </div>
+      </div>
+    <hr/>
     </header>
     <form id="logIn" ng-submit="ctrl.login(logUser)">
       <input type="text" ng-model="logUser.username" placeholder="username"/>
@@ -39,11 +54,18 @@
   <input type="submit" value="edit user"/>
 </form>
     <main>
-      <h4>Welcome to</h4>
-      <h1>Project Onesie!</h1>
-      <p> {{ ctrl.user.username }} </p>
+      <div class="fun-banner">
+        <img src="https://img.clipartfest.com/2dc71be55a88f9bc1ef955e05edda4d2_baby-nautical-clipart-free-baby-clipart-images_6433-2920.png"/>
+        <div class="banner-content">
+          <div class="wrapper">
+            <span class="title">Make Your Onesie!</span>
+            <span class="sub-title">Let's get started!</span>
+          </div>
+        </div>
+      </div>
+      <hr/>
     </main>
-    <section>
+    <section class="main-section">
       <h1>What the heck is Project Onesie though?!</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       <h1>Instructions!</h1>
