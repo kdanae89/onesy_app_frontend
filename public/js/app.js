@@ -8,26 +8,26 @@ app.controller('mainController', ['$http', function($http) {
   //Img info for appending white onesy on create
   var whiteOnesy = document.createElement('img');
   whiteOnesy.src = "http://www.clipartkid.com/images/363/baby-onesie-white-trans-free-images-at-clker-com-vector-clip-art-C1WPC8-clipart.png";
-  whiteOnesy.setAttribute("height", "400");
-  whiteOnesy.setAttribute("width", "400");
+  whiteOnesy.setAttribute("height", "500");
+  whiteOnesy.setAttribute("width", "500");
   whiteOnesy.setAttribute("id", "droppable");
   //Img info for appending pink onesy on create
   var pinkOnesy = document.createElement('img');
   pinkOnesy.src = "http://www.clipartkid.com/images/472/light-pink-bodysuit-short-sleeve-baby-n-toddler-8EkNsb-clipart.jpg";
-  pinkOnesy.setAttribute("height", "400");
-  pinkOnesy.setAttribute("height", "400");
+  pinkOnesy.setAttribute("height", "500");
+  pinkOnesy.setAttribute("height", "500");
   pinkOnesy.setAttribute("id", "droppable");
   //Img info for appending blue onesy
   var blueOnesy = document.createElement('img');
   blueOnesy.src = "https://www.towelsandhome.com/media/catalog/product/cache/1/image/040ec09b1e35df139433887a97daa66f/s/h/short_sleeve_creeper-baby_blue_1_1.jpg";
-  blueOnesy.setAttribute("height", "400");
-  blueOnesy.setAttribute("height", "400");
+  blueOnesy.setAttribute("height", "500");
+  blueOnesy.setAttribute("height", "500");
   blueOnesy.setAttribute("id", "droppable");
   //Img info for yellow onesy
   var yellowOnesy = document.createElement('img');
   yellowOnesy.src = "http://www.sawyoo.com/postpic/2015/04/blank-baby-onesie-template_476014.jpg";
-  yellowOnesy.setAttribute("height", "400");
-  yellowOnesy.setAttribute("height", "400");
+  yellowOnesy.setAttribute("height", "500");
+  yellowOnesy.setAttribute("height", "500");
   yellowOnesy.setAttribute("id", "droppable");
 
 
