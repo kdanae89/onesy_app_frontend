@@ -19,11 +19,14 @@ body {
   }
   li {
     width: 9%;
+    margin-top: 0;
     padding: 1.2em;
     float: left;
     list-style: none;
     &:hover {
       background: $babyBlue;
+      transition: 0.5s;
+      box-shadow: 5px 3px 5px black;
     }
   }
   a {
@@ -51,7 +54,7 @@ section h1 {
   @include banner;
   text-align: left;
   .banner-content {
-    top: 15em;
+    top: 17em;
   }
 }
 

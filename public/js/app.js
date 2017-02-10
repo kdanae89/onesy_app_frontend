@@ -3,6 +3,11 @@ var app = angular.module('ProjectOnesie', []);
 //main controller -------------------------->
 app.controller('mainController', ['$http', function($http) {
 
+  //function for drag ------------------------------->
+
+  $(function() {
+    $(".draggable").draggable();
+  });
 
   //my variables --------------------------->
   this.url = 'http://localhost:3000';
@@ -13,20 +18,20 @@ app.controller('mainController', ['$http', function($http) {
   //ALL JQUERY FOR DRAG N DROP !!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
   //Img info for appending white onesy on create
-  var whiteOnesy = $('<img>').attr('id', 'whiteOnesy').attr('src', "http://www.clipartkid.com/images/363/baby-onesie-white-trans-free-images-at-clker-com-vector-clip-art-C1WPC8-clipart.png").css("height", "500").css("width", "500").addClass('droppable');
+  var whiteOnesy = $('<img>').attr('id', 'whiteOnesy').attr('src', "http://www.clipartkid.com/images/363/baby-onesie-white-trans-free-images-at-clker-com-vector-clip-art-C1WPC8-clipart.png").css("height", "500").css("width", "500").addClass('droppable drag-container selector');
   // console.log(whiteOnesy);
 
   //Img info for appending pink onesy on create
-  var pinkOnesy = $('<img>').attr('id', 'pinkOnesy').attr('src', "http://www.clipartkid.com/images/472/light-pink-bodysuit-short-sleeve-baby-n-toddler-8EkNsb-clipart.jpg").css("height", "500").css("width", "500").addClass('droppable');
+  var pinkOnesy = $('<img>').attr('id', 'pinkOnesy').attr('src', "http://www.clipartkid.com/images/472/light-pink-bodysuit-short-sleeve-baby-n-toddler-8EkNsb-clipart.jpg").css("height", "500").css("width", "500").addClass('droppable drag-container selector');
   // console.log(pinkOnesy);
 
   //Img info for appending blue onesy
-  var blueOnesy = $('<img>').attr('id', 'blueOnesy').attr('src', "https://www.towelsandhome.com/media/catalog/product/cache/1/image/040ec09b1e35df139433887a97daa66f/s/h/short_sleeve_creeper-baby_blue_1_1.jpg").css("height", "500").css("width", "500").addClass('droppable');
+  var blueOnesy = $('<img>').attr('id', 'blueOnesy').attr('src', "https://www.towelsandhome.com/media/catalog/product/cache/1/image/040ec09b1e35df139433887a97daa66f/s/h/short_sleeve_creeper-baby_blue_1_1.jpg").css("height", "500").css("width", "500").addClass('droppable drag-container selector');
   // console.log(blueOnesy);
 
   //Img info for yellow onesy
-  var yellowOnesy = $('<img>').attr('id', 'yellowOnesy').attr('src', "http://www.sawyoo.com/postpic/2015/04/blank-baby-onesie-template_476014.jpg").css("height", "500").css("width", "500").addClass('droppable');
-  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  var yellowOnesy = $('<img>').attr('id', 'yellowOnesy').attr('src', "http://www.sawyoo.com/postpic/2015/04/blank-baby-onesie-template_476014.jpg").css("height", "500").css("width", "500").addClass('droppable drag-container selector');
+
 
 //USER ROUTES -------------------------------->
 
@@ -95,6 +100,14 @@ app.controller('mainController', ['$http', function($http) {
       } else {
         console.log("no onesy created");
       }
+      $(".selector").droppable({
+        accept: ".special",
+        drop: function(event, ui) {
+          $('.drag-container').append(ui.draggable);
+          return true;
+        }
+      });
+      $(".selector").droppable("option", "accept", ".special");
     }.bind(this));
   }
 
@@ -110,41 +123,6 @@ app.controller('mainController', ['$http', function($http) {
     }.bind(this));
   }
   this.allImages();
-
-
-  //functions for drag/drop ---------->
-
-
-
-
-
-$(function() {
-  $(".draggable").draggable();
-  $(".droppable").droppable({
-    drop: function(event, ui) {
-      alert('dropped');
-    }
-  });
-});
-
-  // $(document).ready(function() {
-  //   $(".draggable").draggable();
-  // });
-  //
-  //
-  //
-  // $(document).ready(function() {
-  //   $(".droppable").droppable({
-  //     accept: ".onesyPics",
-  //     activeClass: "ui-state-active"
-  //   });
-  // });
-  //
-  // //Setter for droppable
-  //
-  // $(".droppable").droppable("option", "accept", ".draggable");
-
-
 
 
 }]);

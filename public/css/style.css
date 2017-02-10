@@ -15,11 +15,14 @@ body {
     clear: both; }
 #main-nav li {
   width: 9%;
+  margin-top: 0;
   padding: 1.2em;
   float: left;
   list-style: none; }
   #main-nav li:hover {
-    background: #CEF1FF; }
+    background: #CEF1FF;
+    transition: 0.5s;
+    box-shadow: 5px 3px 5px black; }
 #main-nav a {
   color: black;
   text-decoration: none;
@@ -57,7 +60,7 @@ section h1 {
     font-size: 4em;
     margin-top: 1.5em; }
   .lead-banner .banner-content {
-    top: 15em; }
+    top: 17em; }
 
 .fun-banner {
   width: 100%;

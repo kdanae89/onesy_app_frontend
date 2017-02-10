@@ -2,9 +2,9 @@
 <html ng-app="ProjectOnesie">
   <head>
     <script
-  src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script>
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
     <script
     src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
     integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
@@ -25,14 +25,14 @@
           <ul>
             <li><a href="/">HOME</a></li>
             <li><a href="#">ABOUT</a></li>
-            <li><a href="#">ONESIES</a></li>
+            <li><a href="#">CREATE</a></li>
             <li><a href="#">IMAGES</a></li>
-            <li><a href="#">DESIGNS</a></li>
+            <li><a href="#">YOU</a></li>
           </ul>
         </div>
       </nav>
       <div class="lead-banner">
-        <img src="https://img0.etsystatic.com/042/1/6772659/il_340x270.638139554_tau1.jpg"/>
+        <img src="https://img0.etsystatic.com/042/1/6772659/il_570xN.638139554_tau1.jpg"/>
         <div class="banner-content">
           <div class="wrapper">
             <span class="title">Project Onesie</span>
@@ -102,7 +102,7 @@
     <h1>Now select from these snazzy little pictures and customize!</h1>
         <section class="show-images">
           <div ng-repeat="image in ctrl.images">
-          <img class="draggable" class="onesyPics" ng-src="{{image.img}}">
+          <img class="draggable onesyPics special" ng-src="{{image.img}}">
         </div>
         </section>
       </body>
