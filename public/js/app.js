@@ -10,6 +10,8 @@ app.controller('mainController', ['$http', function($http) {
   this.onsey = {};
   this.images = {};
 
+  //ALL JQUERY FOR DRAG N DROP !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
   //Img info for appending white onesy on create
   var whiteOnesy = $('<img>').attr('id', 'whiteOnesy').attr('src', "http://www.clipartkid.com/images/363/baby-onesie-white-trans-free-images-at-clker-com-vector-clip-art-C1WPC8-clipart.png").css("height", "500").css("width", "500").addClass('droppable');
   // console.log(whiteOnesy);
@@ -24,6 +26,7 @@ app.controller('mainController', ['$http', function($http) {
 
   //Img info for yellow onesy
   var yellowOnesy = $('<img>').attr('id', 'yellowOnesy').attr('src', "http://www.sawyoo.com/postpic/2015/04/blank-baby-onesie-template_476014.jpg").css("height", "500").css("width", "500").addClass('droppable');
+  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 //USER ROUTES -------------------------------->
 
