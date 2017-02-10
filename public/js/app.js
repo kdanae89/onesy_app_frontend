@@ -11,33 +11,19 @@ app.controller('mainController', ['$http', function($http) {
   this.images = {};
 
   //Img info for appending white onesy on create
-  var whiteOnesy = document.createElement('img');
-  whiteOnesy.src = "http://www.clipartkid.com/images/363/baby-onesie-white-trans-free-images-at-clker-com-vector-clip-art-C1WPC8-clipart.png";
-  whiteOnesy.setAttribute("height", "500");
-  whiteOnesy.setAttribute("width", "500");
-  whiteOnesy.setAttribute("class", "droppable");
+  var whiteOnesy = $('<img>').attr('id', 'whiteOnesy').attr('src', "http://www.clipartkid.com/images/363/baby-onesie-white-trans-free-images-at-clker-com-vector-clip-art-C1WPC8-clipart.png").css("height", "500").css("width", "500").addClass('droppable');
+  // console.log(whiteOnesy);
 
   //Img info for appending pink onesy on create
-  var pinkOnesy = document.createElement('img');
-  pinkOnesy.src = "http://www.clipartkid.com/images/472/light-pink-bodysuit-short-sleeve-baby-n-toddler-8EkNsb-clipart.jpg";
-  pinkOnesy.setAttribute("height", "500");
-  pinkOnesy.setAttribute("height", "500");
-  pinkOnesy.setAttribute("class", "droppable");
+  var pinkOnesy = $('<img>').attr('id', 'pinkOnesy').attr('src', "http://www.clipartkid.com/images/472/light-pink-bodysuit-short-sleeve-baby-n-toddler-8EkNsb-clipart.jpg").css("height", "500").css("width", "500").addClass('droppable');
+  // console.log(pinkOnesy);
 
   //Img info for appending blue onesy
-  var blueOnesy = document.createElement('img');
-  blueOnesy.src = "https://www.towelsandhome.com/media/catalog/product/cache/1/image/040ec09b1e35df139433887a97daa66f/s/h/short_sleeve_creeper-baby_blue_1_1.jpg";
-  blueOnesy.setAttribute("height", "500");
-  blueOnesy.setAttribute("height", "500");
-  blueOnesy.setAttribute("class", "droppable");
+  var blueOnesy = $('<img>').attr('id', 'blueOnesy').attr('src', "https://www.towelsandhome.com/media/catalog/product/cache/1/image/040ec09b1e35df139433887a97daa66f/s/h/short_sleeve_creeper-baby_blue_1_1.jpg").css("height", "500").css("width", "500").addClass('droppable');
+  // console.log(blueOnesy);
 
   //Img info for yellow onesy
-  var yellowOnesy = document.createElement('img');
-  yellowOnesy.src = "http://www.sawyoo.com/postpic/2015/04/blank-baby-onesie-template_476014.jpg";
-  yellowOnesy.setAttribute("height", "500");
-  yellowOnesy.setAttribute("height", "500");
-  yellowOnesy.setAttribute("class", "droppable");
-
+  var yellowOnesy = $('<img>').attr('id', 'yellowOnesy').attr('src', "http://www.sawyoo.com/postpic/2015/04/blank-baby-onesie-template_476014.jpg").css("height", "500").css("width", "500").addClass('droppable');
 
 //USER ROUTES -------------------------------->
 
@@ -96,13 +82,13 @@ app.controller('mainController', ['$http', function($http) {
     }).then(function(response) {
       console.log(response);
       if (response.data.onesy.color == "white") {
-        document.getElementById("onesyPreview").appendChild(whiteOnesy);
+        $('#onesyPreview').append(whiteOnesy);
       } else if (response.data.onesy.color == "pastel pink") {
-        document.getElementById("onesyPreview").appendChild(pinkOnesy);
+        $('#onesyPreview').append(pinkOnesy);
       } else if (response.data.onesy.color == "baby blue") {
-        document.getElementById("onesyPreview").appendChild(blueOnesy);
+        $('#onesyPreview').append(blueOnesy);
       } else if (response.data.onesy.color == "neutral yellow") {
-        document.getElementById("onesyPreview").appendChild(yellowOnesy);
+        $('#onesyPreview').append(yellowOnesy);
       } else {
         console.log("no onesy created");
       }
@@ -123,48 +109,37 @@ app.controller('mainController', ['$http', function($http) {
   this.allImages();
 
 
-  //custom directives for drag/drop ---------->
+  //functions for drag/drop ---------->
 
-  //draggable directive
 
-  $(document).ready(function() {
-    $(".draggable").draggable();
+
+
+
+$(function() {
+  $(".draggable").draggable();
+  $(".droppable").droppable({
+    drop: function(event, ui) {
+      alert('dropped');
+    }
   });
+});
 
-  // app.directive('draggable', function() {
-  //   return {
-  //     restrict: 'A',
-  //     link: function(scope, element, attrs) {
-  //       element.draggable({
-  //         revert: "invalid"
-  //       });
-  //     }
-  //   };
+  // $(document).ready(function() {
+  //   $(".draggable").draggable();
   // });
-
-  //droppable directive
-
-  $(document).ready(function() {
-    $('#droppable').droppable();
-  });
-
-
-  // app.directive('droppable', function($compile) {
-  //   return {
-  //     restrict: 'A',
-  //     link: function(scope, element, attrs) {
-  //       element.droppable({
-  //         accept: ".onesyPics",
-  //         hoverClass: "drop-hover",
-  //         drop:function(event,ui) {
-  //           ui.draggable.addClass("dropped");
-  //           ui.droppable.append(ui.draggable);
-  //         }
-  //       })
-  //     }
-  //   }
-  // })
-
+  //
+  //
+  //
+  // $(document).ready(function() {
+  //   $(".droppable").droppable({
+  //     accept: ".onesyPics",
+  //     activeClass: "ui-state-active"
+  //   });
+  // });
+  //
+  // //Setter for droppable
+  //
+  // $(".droppable").droppable("option", "accept", ".draggable");
 
 
 
