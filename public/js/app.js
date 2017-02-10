@@ -6,7 +6,9 @@ app.controller('mainController', ['$http', function($http) {
   //function for drag ------------------------------->
 
   $(function() {
-    $(".draggable").draggable();
+    $(".draggable").draggable({
+      // helper: 'clone'
+    });
   });
 
   //my variables --------------------------->
@@ -18,19 +20,19 @@ app.controller('mainController', ['$http', function($http) {
   //ALL JQUERY FOR DRAG N DROP !!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
   //Img info for appending white onesy on create
-  var whiteOnesy = $('<img>').attr('id', 'whiteOnesy').attr('src', "http://www.clipartkid.com/images/363/baby-onesie-white-trans-free-images-at-clker-com-vector-clip-art-C1WPC8-clipart.png").css("height", "500").css("width", "500").addClass('droppable drag-container selector');
+  var whiteOnesy = $('<img>').attr('id', 'whiteOnesy').attr('src', "http://www.clipartkid.com/images/363/baby-onesie-white-trans-free-images-at-clker-com-vector-clip-art-C1WPC8-clipart.png").css("height", "500").css("width", "500").addClass('droppable drag-container');
   // console.log(whiteOnesy);
 
   //Img info for appending pink onesy on create
-  var pinkOnesy = $('<img>').attr('id', 'pinkOnesy').attr('src', "http://www.clipartkid.com/images/472/light-pink-bodysuit-short-sleeve-baby-n-toddler-8EkNsb-clipart.jpg").css("height", "500").css("width", "500").addClass('droppable drag-container selector');
+  var pinkOnesy = $('<img>').attr('id', 'pinkOnesy').attr('src', "http://www.clipartkid.com/images/472/light-pink-bodysuit-short-sleeve-baby-n-toddler-8EkNsb-clipart.jpg").css("height", "500").css("width", "500").addClass('droppable drag-container');
   // console.log(pinkOnesy);
 
   //Img info for appending blue onesy
-  var blueOnesy = $('<img>').attr('id', 'blueOnesy').attr('src', "https://www.towelsandhome.com/media/catalog/product/cache/1/image/040ec09b1e35df139433887a97daa66f/s/h/short_sleeve_creeper-baby_blue_1_1.jpg").css("height", "500").css("width", "500").addClass('droppable drag-container selector');
+  var blueOnesy = $('<img>').attr('id', 'blueOnesy').attr('src', "https://www.towelsandhome.com/media/catalog/product/cache/1/image/040ec09b1e35df139433887a97daa66f/s/h/short_sleeve_creeper-baby_blue_1_1.jpg").css("height", "500").css("width", "500").addClass('droppable drag-container');
   // console.log(blueOnesy);
 
   //Img info for yellow onesy
-  var yellowOnesy = $('<img>').attr('id', 'yellowOnesy').attr('src', "http://www.sawyoo.com/postpic/2015/04/blank-baby-onesie-template_476014.jpg").css("height", "500").css("width", "500").addClass('droppable drag-container selector');
+  var yellowOnesy = $('<img>').attr('id', 'yellowOnesy').attr('src', "http://www.sawyoo.com/postpic/2015/04/blank-baby-onesie-template_476014.jpg").css("height", "500").css("width", "500").addClass('droppable drag-container');
 
 
 //USER ROUTES -------------------------------->
@@ -100,14 +102,13 @@ app.controller('mainController', ['$http', function($http) {
       } else {
         console.log("no onesy created");
       }
-      $(".selector").droppable({
-        accept: ".special",
+      $(".droppable").droppable({
+        accept: ".draggable",
         drop: function(event, ui) {
-          $('.drag-container').append(ui.draggable);
-          return true;
+          $('.ui-droppable').append(ui.helper).clone();
         }
       });
-      $(".selector").droppable("option", "accept", ".special");
+      $(".droppable").droppable("option", "accept", ".draggable");
     }.bind(this));
   }
 
