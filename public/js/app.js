@@ -25,7 +25,8 @@ app.controller('mainController', ['$http', function($http) {
 
   $(function() {
     $(".draggable").draggable({
-      helper: 'clone'
+      helper: 'clone',
+      zIndex: 2
     });
   });
 
@@ -123,10 +124,10 @@ app.controller('mainController', ['$http', function($http) {
       $(".droppable").droppable({
         accept: ".draggable",
         drop: function(event, ui) {
-          this.dontGo = (ui.helper).clone();
-          console.log(dontGo);
-          console.log((ui.helper).clone());
-          $('.droppable').append(this.dontGo);
+          this.dontGo = ((ui.helper).clone())[0];
+          (this.dontGo).addClass('ui.front');
+          console.log(this.dontGo);
+          $('.ui-droppable').append(this.dontGo);
         }
       });
       $(".droppable").droppable("option", "accept", ".draggable");
