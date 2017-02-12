@@ -6,26 +6,28 @@ app.controller('mainController', ['$http', function($http) {
   //function for drag ------------------------------->
 
 
-app.directive('imageDrag', function() {
-  return {
-    controller: function() {
-      this.drag =
-      $(function() {
-        console.log('working?');
-        $(".draggable").draggable({
-          helper: 'clone'
-        });
-      });
-    },
-    controllerAS: 'draggable'
-  };
-});
+// app.directive("imageDrag", function($parse, $document) {
+//   return {
+//     restrict: "EA",
+//     link:
+//     controller: function() {
+//       this.drag =
+//       $(function() {
+//         console.log('working?');
+//         $(".draggable").draggable({
+//           helper: 'clone'
+//         });
+//       });
+//     },
+//     controllerAS: 'draggable'
+//   };
+// });
 
-  // $(function() {
-  //   $(".draggable").draggable({
-  //     helper: 'clone'
-  //   });
-  // });
+  $(function() {
+    $(".draggable").draggable({
+      helper: 'clone'
+    });
+  });
 
   //my variables --------------------------->
   this.url = 'http://localhost:3000';
@@ -121,7 +123,10 @@ app.directive('imageDrag', function() {
       $(".droppable").droppable({
         accept: ".draggable",
         drop: function(event, ui) {
-          $('.ui-droppable').append(ui.helper).clone();
+          this.dontGo = (ui.helper).clone();
+          console.log(dontGo);
+          console.log((ui.helper).clone());
+          $('.droppable').append(this.dontGo);
         }
       });
       $(".droppable").droppable("option", "accept", ".draggable");
