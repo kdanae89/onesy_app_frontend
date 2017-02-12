@@ -1,8 +1,33 @@
 var app = angular.module('ProjectOnesie', []);
 
 //main controller -------------------------->
-app.controller('mainController', ['$http', '$scope',  function($http, $scope) {
+app.controller('mainController', ['$http', function($http) {
 
+  //function for drag ------------------------------->
+
+
+// app.directive("imageDrag", function($parse, $document) {
+//   return {
+//     restrict: "EA",
+//     link:
+//     controller: function() {
+//       this.drag =
+//       $(function() {
+//         console.log('working?');
+//         $(".draggable").draggable({
+//           helper: 'clone'
+//         });
+//       });
+//     },
+//     controllerAS: 'draggable'
+//   };
+// });
+
+  $(function() {
+    $(".draggable").draggable({
+      helper: 'clone'
+    });
+  });
 
   //my variables --------------------------->
   this.url = 'http://localhost:3000';
@@ -95,6 +120,16 @@ app.controller('mainController', ['$http', '$scope',  function($http, $scope) {
       } else {
         console.log("no onesy created");
       }
+      $(".droppable").droppable({
+        accept: ".draggable",
+        drop: function(event, ui) {
+          this.dontGo = (ui.helper).clone();
+          console.log(dontGo);
+          console.log((ui.helper).clone());
+          $('.droppable').append(this.dontGo);
+        }
+      });
+      $(".droppable").droppable("option", "accept", ".draggable");
     }.bind(this));
   }
 

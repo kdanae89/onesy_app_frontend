@@ -102,7 +102,9 @@
     <h1>Now select from these snazzy little pictures and customize!</h1>
         <section class="show-images">
           <div ng-repeat="image in ctrl.images">
-          <img class="draggable onesyPics" ng-src="{{image.img}}">
+            <imageDrag>
+              <img class="draggable onesyPics" ng-src="{{image.img}}">
+            </imageDrag>
         </div>
         </section>
       </body>
