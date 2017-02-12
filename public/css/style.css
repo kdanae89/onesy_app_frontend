@@ -88,7 +88,9 @@ section h1 {
 .main-section p {
   font-family: 'Caveat', cursive; }
 
-.ui-draggable-dragging {
-  width: 100px; }
+.drag-container .ui-draggable-dragging {
+  height: 100px;
+  width: 100px;
+  z-index: 2; }
 
 
