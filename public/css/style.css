@@ -29,10 +29,14 @@ body {
   display: block;
   text-align: center; }
 
-.lead-banner img {
-  width: 100%;
-  clear: both;
-  height: 30em; }
+.lead-banner {
+  height: 48em; }
+  .lead-banner img {
+    width: 100%;
+    clear: both;
+    height: 30em; }
+  .lead-banner .sub-title {
+    font-family: 'Caveat', cursive; }
 
 section h1 {
   font-size: 2em;
@@ -62,6 +66,46 @@ section h1 {
   .lead-banner .banner-content {
     top: 17em; }
 
+.allForms {
+  width: 95%;
+  padding: 1em;
+  height: 15em;
+  background: #FEFFD1;
+  border: 8px dotted #C4EFC2;
+  -webkit-transition: border 500ms ease-out;
+  -moz-transition: border 500ms ease-out;
+  -o-transition: border 500ms ease-out;
+  transition: border 500ms ease-out; }
+  .allForms:hover {
+    border: 8px dotted #CEF1FF; }
+  .allForms .formTitle {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem; }
+  .allForms #logIn {
+    width: 45%;
+    display: inline-block;
+    float: right;
+    margin-top: 3em; }
+    .allForms #logIn .btn {
+      background: #CEF1FF;
+      font-weight: bold;
+      border-radius: 50%;
+      padding: 0.5em; }
+  .allForms #register {
+    width: 45%;
+    display: inline-block;
+    float: left;
+    margin-top: 4em; }
+    .allForms #register .btn {
+      background: #CEF1FF;
+      font-weight: bold;
+      border-radius: 50%;
+      padding: 0.5em; }
+
+main {
+  margin-top: 12em; }
+
 .fun-banner {
   width: 100%;
   position: relative;
@@ -88,13 +132,24 @@ section h1 {
 .main-section p {
   font-family: 'Caveat', cursive; }
 
-.droppable {
-  min-height: 400px;
-  min-width: 400px; }
+#onesyPreview {
+  min-height: 200px;
+  min-width: 200px;
+  max-height: 500px;
+  max-width: 500px;
+  display: inline-block;
+  float: left; }
 
-.drag-container .ui-draggable-handle {
-  height: 100px;
-  width: 100px;
-  z-index: 2; }
+.show-images {
+  min-height: 200px;
+  min-width: 200px;
+  max-height: 500px;
+  max-width: 500px;
+  overflow: scroll; }
+
+.pics {
+  width: 110px;
+  height: 110px;
+  display: inline-block; }
 
 
