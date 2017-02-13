@@ -70,15 +70,25 @@ section h1 {
   }
 }
 
-.droppable {
-  min-height: 400px;
-  min-width: 400px;
+#onesyPreview {
+  min-height: 200px;
+  min-width: 200px;
+  max-height: 500px;
+  max-width: 500px;
+  display: inline-block;
+  float: left;
 }
 
-.drag-container {
-  .ui-draggable-handle {
-    height: 100px;
-    width: 100px;
-    z-index: 2;
-  }
+.show-images {
+  min-height: 200px;
+  min-width: 200px;
+  max-height: 500px;
+  max-width: 500px;
+  overflow: scroll;
+}
+
+.pics {
+  width: 110px;
+  height: 110px;
+  display: inline-block;
 }

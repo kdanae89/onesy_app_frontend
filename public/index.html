@@ -98,13 +98,10 @@
         <div class="droppable" id="onesyPreview">
         </div>
         </section>
-      <hr/>
-    <h1>Now select from these snazzy little pictures and customize!</h1>
         <section class="show-images">
-          <div ng-repeat="image in ctrl.images">
-            <imageDrag>
-              <img class="draggable onesyPics" ng-src="{{image.img}}">
-            </imageDrag>
+          <h1>Now select from these snazzy little pictures and customize!</h1>
+          <div class="pics" ng-repeat="image in ctrl.images">
+              <img class="draggable" ng-src="{{image.img}}">
         </div>
         </section>
       </body>
