@@ -70,8 +70,13 @@ section h1 {
   }
 }
 
+.droppable {
+  min-height: 400px;
+  min-width: 400px;
+}
+
 .drag-container {
-  .ui-draggable-dragging {
+  .ui-draggable-handle {
     height: 100px;
     width: 100px;
     z-index: 2;
