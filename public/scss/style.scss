@@ -38,10 +38,14 @@ body {
 }//end main-nav
 
 .lead-banner {
+  height: 48em;
   img {
     width: 100%;
     clear: both;
     height: 30em;
+  }
+  .sub-title {
+    font-family: 'Caveat', cursive;
   }
 }
 
@@ -56,6 +60,54 @@ section h1 {
   .banner-content {
     top: 17em;
   }
+}
+
+.allForms {
+  width: 95%;
+  padding: 1em;
+  height: 15em;
+  background: $pastelYellow;
+  border: 8px dotted $pastelGreen;
+  -webkit-transition : border 500ms ease-out;
+  -moz-transition : border 500ms ease-out;
+  -o-transition : border 500ms ease-out;
+  transition : border 500ms ease-out;
+  &:hover {
+    border: 8px dotted $babyBlue;
+  }
+  .formTitle {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+  }
+  #logIn {
+    width: 45%;
+    display: inline-block;
+    float: right;
+    margin-top: 3em;
+    .btn {
+      background: $babyBlue;
+      font-weight: bold;
+      border-radius: 50%;
+      padding: 0.5em;
+    }
+  }
+  #register {
+    width: 45%;
+    display: inline-block;
+    float: left;
+    margin-top: 4em;
+    .btn {
+      background: $babyBlue;
+      font-weight: bold;
+      border-radius: 50%;
+      padding: 0.5em;
+    }
+  }
+}
+
+main {
+  margin-top: 12em;
 }
 
 .fun-banner {

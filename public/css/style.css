@@ -29,10 +29,14 @@ body {
   display: block;
   text-align: center; }
 
-.lead-banner img {
-  width: 100%;
-  clear: both;
-  height: 30em; }
+.lead-banner {
+  height: 48em; }
+  .lead-banner img {
+    width: 100%;
+    clear: both;
+    height: 30em; }
+  .lead-banner .sub-title {
+    font-family: 'Caveat', cursive; }
 
 section h1 {
   font-size: 2em;
@@ -61,6 +65,46 @@ section h1 {
     margin-top: 1.5em; }
   .lead-banner .banner-content {
     top: 17em; }
+
+.allForms {
+  width: 95%;
+  padding: 1em;
+  height: 15em;
+  background: #FEFFD1;
+  border: 8px dotted #C4EFC2;
+  -webkit-transition: border 500ms ease-out;
+  -moz-transition: border 500ms ease-out;
+  -o-transition: border 500ms ease-out;
+  transition: border 500ms ease-out; }
+  .allForms:hover {
+    border: 8px dotted #CEF1FF; }
+  .allForms .formTitle {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem; }
+  .allForms #logIn {
+    width: 45%;
+    display: inline-block;
+    float: right;
+    margin-top: 3em; }
+    .allForms #logIn .btn {
+      background: #CEF1FF;
+      font-weight: bold;
+      border-radius: 50%;
+      padding: 0.5em; }
+  .allForms #register {
+    width: 45%;
+    display: inline-block;
+    float: left;
+    margin-top: 4em; }
+    .allForms #register .btn {
+      background: #CEF1FF;
+      font-weight: bold;
+      border-radius: 50%;
+      padding: 0.5em; }
+
+main {
+  margin-top: 12em; }
 
 .fun-banner {
   width: 100%;
