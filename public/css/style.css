@@ -88,7 +88,11 @@ section h1 {
 .main-section p {
   font-family: 'Caveat', cursive; }
 
-.drag-container .ui-draggable-dragging {
+.droppable {
+  min-height: 400px;
+  min-width: 400px; }
+
+.drag-container .ui-draggable-handle {
   height: 100px;
   width: 100px;
   z-index: 2; }
