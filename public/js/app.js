@@ -5,6 +5,24 @@ app.controller('mainController', ['$http', function($http) {
 
   //function for drag ------------------------------->
 
+
+// app.directive("imageDrag", function($parse, $document) {
+//   return {
+//     restrict: "EA",
+//     link:
+//     controller: function() {
+//       this.drag =
+//       $(function() {
+//         console.log('working?');
+//         $(".draggable").draggable({
+//           helper: 'clone'
+//         });
+//       });
+//     },
+//     controllerAS: 'draggable'
+//   };
+// });
+
   $(function() {
     $(".draggable").draggable({
       helper: 'clone',

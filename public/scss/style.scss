@@ -1,146 +1,98 @@
-@import "reset";
-@import "variables";
-@import "mixins";
-
 body {
   font-family: 'Risque', cursive;
-  text-align: center;
-}
+  text-align: center; }
 
-#main-nav {
-  ul {
-    width: 100%;
-    position: fixed;
-    background: $pastelPurple;
-    opacity: 0.9;
-    margin-top: 0;
-    z-index: 2;
-    @include clearfix;
-  }
-  li {
-    width: 9%;
-    margin-top: 0;
-    padding: 1.2em;
-    float: left;
-    list-style: none;
-    &:hover {
-      background: $babyBlue;
-      transition: 0.5s;
-      box-shadow: 5px 3px 5px black;
-    }
-  }
-  a {
-    color: black;
-    text-decoration: none;
+#main-nav ul {
+  width: 100%;
+  position: fixed;
+  background: #F7E2FF;
+  opacity: 0.9;
+  margin-top: 0;
+  z-index: 2; }
+  #main-nav ul:after {
+    content: "";
     display: block;
-    text-align: center;
-  }
-}//end main-nav
+    clear: both; }
+#main-nav li {
+  width: 9%;
+  margin-top: 0;
+  padding: 1.2em;
+  float: left;
+  list-style: none; }
+  #main-nav li:hover {
+    background: #CEF1FF;
+    transition: 0.5s;
+    box-shadow: 5px 3px 5px black; }
+#main-nav a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  text-align: center; }
 
-.lead-banner {
-  height: 48em;
-  img {
-    width: 100%;
-    clear: both;
-    height: 30em;
-  }
-  .sub-title {
-    font-family: 'Caveat', cursive;
-  }
-}
+.lead-banner img {
+  width: 100%;
+  clear: both;
+  height: 30em; }
 
 section h1 {
-  font-size: $sectionHeading;
-  box-shadow: inset 0 0 1em $pastelPurple, 0 0 1em $pastelPink;
-}
+  font-size: 2em;
+  box-shadow: inset 0 0 1em #F7E2FF, 0 0 1em #FFEAFA; }
 
 .lead-banner {
-  @include banner;
-  text-align: left;
-  .banner-content {
-    top: 17em;
-  }
-}
-
-.allForms {
-  width: 95%;
-  padding: 1em;
-  height: 15em;
-  background: $pastelYellow;
-  border: 8px dotted $pastelGreen;
-  -webkit-transition : border 500ms ease-out;
-  -moz-transition : border 500ms ease-out;
-  -o-transition : border 500ms ease-out;
-  transition : border 500ms ease-out;
-  &:hover {
-    border: 8px dotted $babyBlue;
-  }
-  .formTitle {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  bottom: 3em;
+  text-align: left; }
+  .lead-banner .banner-content {
+    position: absolute;
     width: 100%;
-    text-align: center;
-    font-size: 2rem;
-  }
-  #logIn {
-    width: 45%;
-    display: inline-block;
-    float: right;
-    margin-top: 3em;
-    .btn {
-      background: $babyBlue;
-      font-weight: bold;
-      border-radius: 50%;
-      padding: 0.5em;
-    }
-  }
-  #register {
-    width: 45%;
-    display: inline-block;
-    float: left;
-    margin-top: 4em;
-    .btn {
-      background: $babyBlue;
-      font-weight: bold;
-      border-radius: 50%;
-      padding: 0.5em;
-    }
-  }
-}
-
-main {
-  margin-top: 12em;
-}
+    top: 1em; }
+  .lead-banner img {
+    width: 100%; }
+  .lead-banner span {
+    font-size: 1em;
+    display: block;
+    text-transform: uppercase;
+    font-weight: bold; }
+  .lead-banner span.title {
+    font-weight: normal;
+    font-size: 4em;
+    margin-top: 1.5em; }
+  .lead-banner .banner-content {
+    top: 17em; }
 
 .fun-banner {
-  @include banner;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  bottom: 3em;
   text-align: right;
-  margin: 5em 0;
-}
+  margin: 5em 0; }
+  .fun-banner .banner-content {
+    position: absolute;
+    width: 100%;
+    top: 1em; }
+  .fun-banner img {
+    width: 100%; }
+  .fun-banner span {
+    font-size: 1em;
+    display: block;
+    text-transform: uppercase;
+    font-weight: bold; }
+  .fun-banner span.title {
+    font-weight: normal;
+    font-size: 4em;
+    margin-top: 1.5em; }
 
-.main-section {
-  p {
-    font-family: 'Caveat', cursive;
-  }
-}
+.main-section p {
+  font-family: 'Caveat', cursive; }
 
-#onesyPreview {
-  min-height: 200px;
-  min-width: 200px;
-  max-height: 500px;
-  max-width: 500px;
-  display: inline-block;
-  float: left;
-}
+.droppable {
+  min-height: 400px;
+  min-width: 400px; }
 
-.show-images {
-  min-height: 200px;
-  min-width: 200px;
-  max-height: 500px;
-  max-width: 500px;
-  overflow: scroll;
-}
-
-.pics {
-  width: 110px;
-  height: 110px;
-  display: inline-block;
-}
+.drag-container .ui-draggable-handle {
+  height: 100px;
+  width: 100px;
+  z-index: 2; }
