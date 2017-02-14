@@ -131,10 +131,16 @@ section h1 {
   font-family: 'Caveat', cursive; }
 
 .main-section {
-  background-color: #FFEAFA;
+  background-color: #C4EFC2;
   min-height: 30em;
   width: 99%;
-  border: 9px dotted #CEF1FF; }
+  border: 9px dotted #FEFFD1;
+  -webkit-transition: border 500ms ease-out;
+  -moz-transition: border 500ms ease-out;
+  -o-transition: border 500ms ease-out;
+  transition: border 500ms ease-out; }
+  .main-section:hover {
+    border: 9px dotted #FFEAFA; }
   .main-section h1 {
     font-family: 'Caveat', cursive;
     margin-bottom: 0.5em; }

@@ -140,10 +140,17 @@ section h1 {
     }
 
 .main-section {
-  background-color: $pastelPink;
+  background-color: $pastelGreen;
   min-height: 30em;
   width: 99%;
-  border: 9px dotted $babyBlue;
+  border: 9px dotted $pastelYellow;
+  -webkit-transition : border 500ms ease-out;
+  -moz-transition : border 500ms ease-out;
+  -o-transition : border 500ms ease-out;
+  transition : border 500ms ease-out;
+  &:hover {
+    border: 9px dotted $pastelPink;
+  }
   h1 {
     font-family: 'Caveat', cursive;
     margin-bottom: 0.5em;
