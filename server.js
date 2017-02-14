@@ -1,12 +1,12 @@
 var express = require('express');
 var app = express();
-var port = 3001;
+var port = process.env.PORT || 3001;
 
 //middlewear
 app.use(express.static('public'));
 
 
 //port listener
-app.listen(3001, function() {
+app.listen(port, function() {
   console.log(port);
 });
