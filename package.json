@@ -17,5 +17,6 @@
   },
   "homepage": "https://github.com/kdanae89/onesy_app_frontend#readme",
   "dependencies": {
+    "express": "^4.14.1"
   }
 }
