@@ -93,7 +93,8 @@ app.controller('mainController', ['$http', function($http) {
     $http({
       method: 'POST',
       url: this.url + '/users/' + this.user.id + '/onesies',
-      data: { onesy: { size: newOnesy.size, color: newOnesy.color, user_id: this.user.id }}
+      data: { onesy: { size: newOnesy.size, color: newOnesy.color, user_id: this.user.id }},
+      headers: { 'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('token'))}
     }).then(function(response) {
       console.log(response);
       if (response.data.onesy.color == "white") {
