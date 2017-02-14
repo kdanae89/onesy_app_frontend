@@ -35,48 +35,57 @@
         <img src="https://img0.etsystatic.com/042/1/6772659/il_570xN.638139554_tau1.jpg"/>
         <div class="banner-content">
           <div class="wrapper">
-            <span class="title">Project Onesie</span>
-            <span class="sub-title">Customizable onesies for your munchkins</span>
+            <span class="title">Project Onesie
+            </span>
+            <span class="sub-title">Customizable onesies for your munchkins </span>
           </div>
         </div>
       </div>
-    <hr/>
     </header>
-    <form id="logIn" ng-submit="ctrl.login(logUser)">
+    <section ng-mouseenter="open = true" class="userForms">
+    <h1>First, let's sign you up and/or log you in!</h1>
+    <form ng-show="open" id="logIn" ng-submit="ctrl.login(logUser)">
       <input type="text" ng-model="logUser.username" placeholder="username"/>
       <input type="password" ng-model="logUser.password" placeholder="password"/>
-      <input type="submit" value="log in"/>
+      <input class="btn" type="submit" value="log in"/>
     </form>
   </br>
-  <form id="register" ng-submit="ctrl.register(newUser)">
+  <form ng-show="open" id="register" ng-submit="ctrl.register(newUser)">
     <input type="text" ng-model="newUser.username" placeholder="username"/>
     <input type="password" ng-model="newUser.password" placeholder="password">
-    <input type="submit" value="register"/>
+    <input class="btn" type="submit" value="register"/>
   </form>
-</br>
-<form id="editUser" ng-submit="ctrl.edit(editMe)">
-  <input type="text" ng-model="editMe.username" placeholder="new username"/>
-  <input type="password" ng-model="editMe.password" placeholder="new password"/>
-  <input type="submit" value="edit user"/>
-</form>
+  </br>
+  <!-- <form id="editUser" ng-submit="ctrl.edit(editMe)">
+    <input type="text" ng-model="editMe.username" placeholder="new username"/>
+    <input type="password" ng-model="editMe.password" placeholder="new password"/>
+    <input type="submit" value="edit user"/>
+  </form> -->
+</section>
     <main>
       <div class="fun-banner">
         <img src="https://img.clipartfest.com/2dc71be55a88f9bc1ef955e05edda4d2_baby-nautical-clipart-free-baby-clipart-images_6433-2920.png"/>
         <div class="banner-content">
           <div class="wrapper">
-            <span class="title">Make Your Onesie!</span>
-            <span class="sub-title">Let's get started!</span>
+            <span class="title">Make Your Onesie!
+            </span>
+            <span class="sub-title">Let's get started!
+            </span>
           </div>
         </div>
       </div>
-      <hr/>
     </main>
     <section class="main-section">
+      <section class="leftPar">
       <h1>What the heck is Project Onesie though?!</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>I recently became a mother, and all I wanted was to dress my little peanut up in the cutest nerd attire. On Amazon you can find a ton of Star Wars garb and anything pikachu, but the options are surprisingly limited... I wished someone had made an affordable app where I could make my own! That's the point of Project Onesie, to give parents the option to nerdify their little ones and possibly humiliate them later on in life.</p>
+    </section>
+    <section class="rightPar">
       <h1>Instructions!</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <section>
+      <p>First things first, if you haven't, register and log-in so that your onesie is is custom to you. The space for that is up above in the yellow box. Then fill out the form and click "create onesie" and you're on your way! Just drag any desireable image to your onesie and plop it on where ever you like!</p>
+    </section>
+    </section>
+      <section id="create">
         <h1>Create a Onesie</h1>
         <form ng-submit="ctrl.createOnesy(newOnesy)">
         <label for="size">Size</label>
@@ -87,25 +96,24 @@
             <option value="9-12">9-12 months</option>
           </select name="color">
           <label for="color">Color</label>
-          <select ng-model="newOnesy.color">
-            <option value="white">White</option>
-            <option value="pastel pink">Pastel Pink</option>
-            <option value="baby blue">Baby Blue</option>
-            <option value="neutral yellow">Neutral Yellow</option>
-          </select>
-          <input type="submit" value="create onesie"/>
+            <select ng-model="newOnesy.color">
+              <option value="white">White</option>
+              <option value="pastel pink">Pastel Pink</option>
+              <option value="baby blue">Baby Blue</option>
+              <option value="neutral yellow">Neutral Yellow</option>
+            </select>
+          <input class="btn" type="submit" value="create onesie"/>
         </form>
         <div class="droppable" id="onesyPreview">
         </div>
-        </section>
-      <hr/>
-    <h1>Now select from these snazzy little pictures and customize!</h1>
+      </section>
+      <section id="showPics">
+        <h1>Grab a Snazzy Pic</h1>
         <section class="show-images">
           <div ng-repeat="image in ctrl.images">
-            <imageDrag>
-              <img class="draggable onesyPics" ng-src="{{image.img}}">
-            </imageDrag>
-        </div>
+            <img class="draggable onesyPics" ng-src="{{image.img}}">
+          </div>
         </section>
+      </section>
       </body>
     </html>

@@ -1,6 +1,21 @@
+// variables
+
+$pastelGreen: #C4EFC2;
+$babyBlue: #CEF1FF;
+$pastelPink: #FFEAFA;
+$pastelYellow: #FEFFD1;
+$pastelPurple: #F7E2FF;
+$sectionHeading: 2em;
+$bannerHeading: 1em;
+
 body {
   font-family: 'Risque', cursive;
-  text-align: center; }
+  text-align: center;
+}
+
+header {
+  height: 47em;
+}
 
 #main-nav ul {
   width: 100%;
@@ -29,14 +44,9 @@ body {
   display: block;
   text-align: center; }
 
-.lead-banner img {
-  width: 100%;
-  clear: both;
-  height: 30em; }
-
 section h1 {
   font-size: 2em;
-  box-shadow: inset 0 0 1em #F7E2FF, 0 0 1em #FFEAFA; }
+}
 
 .lead-banner {
   width: 100%;
@@ -47,20 +57,61 @@ section h1 {
   .lead-banner .banner-content {
     position: absolute;
     width: 100%;
-    top: 1em; }
+    top: 1em;
+   }
   .lead-banner img {
-    width: 100%; }
+    width: 100%;
+    clear: both;
+    height: 30em;
+   }
   .lead-banner span {
     font-size: 1em;
     display: block;
     text-transform: uppercase;
-    font-weight: bold; }
+    font-weight: bold;
+   }
   .lead-banner span.title {
     font-weight: normal;
     font-size: 4em;
-    margin-top: 1.5em; }
+    margin-top: 1.9em; }
+    .lead-banner span.sub-title {
+      font-family: 'Caveat', cursive;
+    }
   .lead-banner .banner-content {
-    top: 17em; }
+    top: 17em;
+   }
+
+.userForms {
+  height: 13em;
+  background: $pastelYellow;
+  border: 9px dotted $pastelGreen;
+  -webkit-transition : border 500ms ease-out;
+  -moz-transition : border 500ms ease-out;
+  -o-transition : border 500ms ease-out;
+  transition : border 500ms ease-out;
+  margin-bottom: 11em;
+  &:hover {
+    border: 9px dotted $babyBlue;
+  }
+  .btn {
+    border-radius: 50%;
+    background-color: $babyBlue;
+    padding: 1em;
+    font-weight: bold;
+  }
+  #logIn {
+    display: inline-block;
+    width: 40%;
+    float: right;
+    margin: 1em;
+  }
+  #register {
+    display: inline-block;
+    width: 40%;
+    float: left;
+    margin: 0 1em;
+  }
+}
 
 .fun-banner {
   width: 100%;
@@ -83,10 +134,66 @@ section h1 {
   .fun-banner span.title {
     font-weight: normal;
     font-size: 4em;
-    margin-top: 1.5em; }
+    margin-top: 1em; }
+    .fun-banner span.sub-title {
+      font-family: 'Caveat', cursive;
+    }
 
-.main-section p {
-  font-family: 'Caveat', cursive; }
+.main-section {
+  background-color: $pastelPink;
+  min-height: 30em;
+  width: 99%;
+  border: 9px dotted $babyBlue;
+  h1 {
+    font-family: 'Caveat', cursive;
+    margin-bottom: 0.5em;
+  }
+  .leftPar {
+    display: inline-block;
+    float: left;
+    width: 40%;
+    margin: 2em 1.5em;
+  }
+  .rightPar {
+    display: inline-block;
+    float: right;
+    width: 40%;
+    margin: 4em 1.5em;
+  }
+}
+
+#create {
+  clear: both;
+  margin-top: 2em;
+  float: left;
+  width: 40%;
+
+  .btn {
+    border-radius: 50%;
+    background-color: $babyBlue;
+    padding: 1em;
+    margin-top: 2em;
+    font-weight: bold;
+  }
+}
+
+#showPics{
+  margin-top: 4em;
+  .show-images {
+    float: right;
+    width: 40%;
+    height: 30em;
+    overflow: scroll;
+    margin-right: 3em;
+    div {
+      width: 110px;
+      display: inline-block;
+    }
+    .onesyPics {
+      display: inline-block;
+    }
+  }
+}
 
 .droppable {
   min-height: 400px;

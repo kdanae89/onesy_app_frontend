@@ -5,31 +5,16 @@ app.controller('mainController', ['$http', function($http) {
 
   //function for drag ------------------------------->
 
+  // $(function() {
 
-// app.directive("imageDrag", function($parse, $document) {
-//   return {
-//     restrict: "EA",
-//     link:
-//     controller: function() {
-//       this.drag =
-//       $(function() {
-//         console.log('working?');
-//         $(".draggable").draggable({
-//           helper: 'clone'
-//         });
-//       });
-//     },
-//     controllerAS: 'draggable'
-//   };
-// });
 
-  $(function() {
+  setTimeout(function() {
     $(".draggable").draggable({
       helper: 'clone',
       zIndex: 2,
       revert: "invalid"
     });
-  });
+  }, 500);
 
   //my variables --------------------------->
   this.url = 'http://localhost:3000';
