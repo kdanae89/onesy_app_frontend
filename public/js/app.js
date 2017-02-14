@@ -5,13 +5,16 @@ app.controller('mainController', ['$http', function($http) {
 
   //function for drag ------------------------------->
 
-  $(function() {
+  // $(function() {
+
+
+  setTimeout(function() {
     $(".draggable").draggable({
       helper: 'clone',
       zIndex: 2,
       revert: "invalid"
     });
-  });
+  }, 500);
 
   //my variables --------------------------->
   this.url = 'http://localhost:3000';
