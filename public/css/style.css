@@ -159,7 +159,7 @@ section h1 {
 
 #create {
   clear: both;
-  margin: 2em;
+  margin-top: 2em;
   float: left;
   width: 40%; }
   #create .btn {
@@ -168,16 +168,12 @@ section h1 {
     padding: 1em;
     margin-top: 2em;
     font-weight: bold; }
-  #create #onesyPreview {
-    margin-top: 1.5em; }
-    #create #onesyPreview img {
-      width: 40%; }
 
 #showPics {
   margin-top: 4em; }
   #showPics .show-images {
     float: right;
-    width: 30%;
+    width: 40%;
     height: 30em;
     overflow: scroll;
     margin-right: 3em; }
