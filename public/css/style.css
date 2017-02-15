@@ -1,6 +1,7 @@
 body {
   font-family: 'Risque', cursive;
-  text-align: center; }
+  text-align: center;
+  left: 0; }
 
 header {
   height: 47em; }
@@ -11,7 +12,8 @@ header {
   background: #F7E2FF;
   opacity: 0.9;
   margin-top: 0;
-  z-index: 2; }
+  z-index: 2;
+  left: 0; }
 
 #main-nav ul:after {
   content: "";
@@ -157,7 +159,7 @@ section h1 {
 
 #create {
   clear: both;
-  margin-top: 2em;
+  margin: 2em;
   float: left;
   width: 40%; }
   #create .btn {
@@ -166,12 +168,16 @@ section h1 {
     padding: 1em;
     margin-top: 2em;
     font-weight: bold; }
+  #create #onesyPreview {
+    margin-top: 1.5em; }
+    #create #onesyPreview img {
+      width: 40%; }
 
 #showPics {
   margin-top: 4em; }
   #showPics .show-images {
     float: right;
-    width: 40%;
+    width: 30%;
     height: 30em;
     overflow: scroll;
     margin-right: 3em; }
@@ -189,5 +195,10 @@ section h1 {
   height: 100px;
   width: 100px;
   z-index: 2; }
+
+footer {
+  clear: both;
+  height: 1em;
+  padding: 1em; }
 
 

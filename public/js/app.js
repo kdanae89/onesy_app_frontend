@@ -21,6 +21,7 @@ app.controller('mainController', ['$http', function($http) {
   this.user = {};
   this.onsey = {};
   this.images = {};
+  this.save = {};
 
   //ALL JQUERY FOR DRAG N DROP !!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -97,6 +98,8 @@ app.controller('mainController', ['$http', function($http) {
       headers: { 'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('token'))}
     }).then(function(response) {
       console.log(response);
+      this.onesy = response.data.onesy;
+      console.log(this.onesy);
       if (response.data.onesy.color == "white") {
         $('#onesyPreview').append(whiteOnesy);
       } else if (response.data.onesy.color == "pastel pink") {
@@ -115,11 +118,25 @@ app.controller('mainController', ['$http', function($http) {
           // (this.dontGo).addClass('ui.front');
           $(".ui-draggable-handle").addClass('ui.front');
           $(".ui-draggable-handle").css("height", "100px");
-          console.log(this.dontGo);
+          console.log($('.ui-draggable-dragging'));
+          console.log($('.ui-droppable'));
           $('.ui-droppable').append(this.dontGo);
         }
       });
       $(".droppable").droppable("option", "accept", ".draggable");
+    }.bind(this));
+  }
+
+  // onesy image ledger (save onesie)
+  this.editOnesy = function(saveOnesy) {
+    console.log("checking user for onesy", localStorage.userId);
+    $http({
+      method: 'POST',
+      url: this.url + '/ledgers',
+      data: { ledger: { image_id: saveOnesy.image_id, onesy_id: saveOnesy.onesy_id }},
+      headers: { 'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('token'))}
+    }).then(function(response) {
+      console.log(response);
     }.bind(this));
   }
 
@@ -130,8 +147,8 @@ app.controller('mainController', ['$http', function($http) {
       method: 'GET',
       url: this.url + '/images'
     }).then(function(response) {
+      console.log(response);
       this.images = response.data.images;
-      // console.log(this.images);
     }.bind(this));
   }
   this.allImages();
