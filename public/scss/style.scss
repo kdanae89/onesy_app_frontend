@@ -11,6 +11,7 @@ $bannerHeading: 1em;
 body {
   font-family: 'Risque', cursive;
   text-align: center;
+  left: 0;
 }
 
 header {
@@ -23,7 +24,8 @@ header {
   background: #F7E2FF;
   opacity: 0.9;
   margin-top: 0;
-  z-index: 2; }
+  z-index: 2;
+  left: 0;}
   #main-nav ul:after {
     content: "";
     display: block;
@@ -210,3 +212,9 @@ section h1 {
   height: 100px;
   width: 100px;
   z-index: 2; }
+
+  footer {
+    clear: both;
+    height: 1em;
+    padding: 1em;
+  }

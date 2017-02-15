@@ -105,14 +105,17 @@
         </form>
         <div class="droppable" id="onesyPreview">
         </div>
-      </section>
+    </section>
       <section id="showPics">
         <h1>Grab a Snazzy Pic</h1>
         <section class="show-images">
           <div ng-repeat="image in ctrl.images">
-            <img class="draggable onesyPics" ng-src="{{image.img}}">
+            <img ng-click="image_id = this.image.id" class="draggable onesyPics" ng-src="{{image.img}}">
           </div>
         </section>
       </section>
+      <footer>
+        Brought to you with &hearts; by Kaylie Weable 2017
+      </footer>
       </body>
     </html>
