@@ -129,7 +129,7 @@ app.controller('mainController', ['$http', function($http) {
   this.allImages = function() {
     $http({
       method: 'GET',
-      url: this.heroku + '/images'
+      url: this.heroku + 'images'
     }).then(function(response) {
       this.images = response.data.images;
       // console.log(this.images);
