@@ -47,7 +47,7 @@ app.controller('mainController', ['$http', function($http) {
   this.login = function(logUser) {
     $http({
       method: 'POST',
-      url: this.heroku + '/users/login',
+      url: this.url + '/users/login',
       data: { user: { username: logUser.username, password: logUser.password }}
     }).then(function(response) {
       console.log(response);
@@ -64,7 +64,7 @@ app.controller('mainController', ['$http', function($http) {
   this.register = function(newUser) {
     $http({
       method: 'POST',
-      url: this.heroku + '/users',
+      url: this.url + '/users',
       data: { user: { username: newUser.username, password: newUser.password }}
     }).then(function(response) {
       console.log(response);
@@ -77,7 +77,7 @@ app.controller('mainController', ['$http', function($http) {
     console.log("checking user in edit", this.user.id);
     $http({
       method: 'PUT',
-      url: this.heroku + '/users/' + this.user.id,
+      url: this.url + '/users/' + this.user.id,
       data: { user: { username: editMe.username, password: editMe.password }},
       headers: { 'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('token'))}
     }).then(function(response) {
@@ -93,7 +93,7 @@ app.controller('mainController', ['$http', function($http) {
   this.createOnesy = function(newOnesy) {
     $http({
       method: 'POST',
-      url: this.heroku + '/users/' + this.user.id + '/onesies',
+      url: this.url + '/users/' + this.user.id + '/onesies',
       data: { onesy: { size: newOnesy.size, color: newOnesy.color, user_id: localStorage.userId }},
       headers: { 'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('token'))}
     }).then(function(response) {
@@ -129,7 +129,7 @@ app.controller('mainController', ['$http', function($http) {
   this.allImages = function() {
     $http({
       method: 'GET',
-      url: this.heroku + 'images'
+      url: this.url + '/images'
     }).then(function(response) {
       this.images = response.data.images;
       // console.log(this.images);
