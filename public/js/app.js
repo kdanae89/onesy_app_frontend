@@ -51,12 +51,12 @@ app.controller('mainController', ['$http', function($http) {
       data: { user: { username: logUser.username, password: logUser.password }}
     }).then(function(response) {
       console.log(response);
-      this.user = response.data.user;
-      console.log(this.user);
-      localStorage.setItem('token', JSON.stringify(response.data.token));
-      localStorage.setItem('username', JSON.stringify(response.data.user.username));
-      localStorage.setItem('userId', JSON.stringify(response.data.user.id));
-      document.getElementById("logIn").reset();
+      // this.user = response.data.user;
+      // console.log(this.user);
+      // localStorage.setItem('token', JSON.stringify(response.data.token));
+      // localStorage.setItem('username', JSON.stringify(response.data.user.username));
+      // localStorage.setItem('userId', JSON.stringify(response.data.user.id));
+      // document.getElementById("logIn").reset();
     }.bind(this));
   }
 
